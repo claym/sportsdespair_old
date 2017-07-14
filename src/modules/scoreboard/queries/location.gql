@@ -1,0 +1,14 @@
+# GraphQL queries
+query getLocation {
+  Location(name: "Charlotte") {
+    id,
+    name,
+    subjects(orderBy: sequence_ASC) {
+      id,
+      name,
+      score,
+      image,
+      slider
+    }
+  }
+}
