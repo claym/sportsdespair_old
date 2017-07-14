@@ -8,14 +8,15 @@ const meter = (props) => {
         backgroundImage: `url('${props.slider}')`,
         backgroundSize: `contain`,
         backgroundRepeat: `no-repeat`,
-        backgroundPosition: `center`,
+        backgroundPosition: `center`
     }
 
     const imageStyle = {
         position: 'relative', 
         left: (props.score * 10) + '%', 
         transform: `translate3d(-${props.score * 10}%, 0, 0)`,
-        height: 120
+        height: 120,
+        filter: 'drop-shadow(9px 9px 9px rgba(0,0,0,0.5))'        
     }
     console.dir(imageStyle);
     return (
