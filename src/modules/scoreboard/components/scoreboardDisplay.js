@@ -24,7 +24,7 @@ const ScoreboardDisplay = (props) => {
     }
 
     let style = {
-        width: 800,
+        width: 760,
         height: 640,
         backgroundImage: `url('${FrownCrown}')`,
         backgroundSize: `contain`,
