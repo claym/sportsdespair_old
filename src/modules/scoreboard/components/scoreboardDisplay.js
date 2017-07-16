@@ -45,9 +45,8 @@ const ScoreboardDisplay = (props) => {
         <article className="scoreboard">
             <header className="md-grid"><h2 className="md-cell md-cell--12">{props.location.name} Sports Despair Index: 7/10/2017</h2></header>
             <div className="md-grid">
-                <div className="md-cell md-cell--2 md-cell--tablet-hidden md-cell--phone-hidden">
-                </div>
-                <div className="md-cell md-cell--8">
+                <div className="md-cell md-cell--3 md-cell--1-tablet md-cell--phone-hidden"></div>
+                <div className="md-cell md-cell--6 md-cell--6-tablet md-cell--4-tablet">
                     <Paper
                         style={style}
                         key="1"
@@ -63,8 +62,7 @@ const ScoreboardDisplay = (props) => {
                     </Paper>
 
                 </div>
-                <div className="md-cell md-cell--2 md-cell--tablet-hidden md-cell--phone-hidden">
-                </div>
+                <div className="md-cell md-cell--3 md-cell--1-tablet md-cell--phone-hidden"></div>
             </div>
         </article>
     );

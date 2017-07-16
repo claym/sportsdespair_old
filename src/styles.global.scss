@@ -9,12 +9,19 @@ you can import locally, and they wind up in the resulting bundle */
 @import '~normalize.css';
 @import '~react-md/src/scss/react-md';
 
+
+
 $md-primary-color: $md-cyan-700;
 $md-primary-color-dark: $md-cyan-900;
 $md-secondary-color: $md-light-blue-a-700;
 $md-secondary-color-light: lighten($md-light-blue-a-700, 25%);
 
+// $break-small: $md-mobile-min-width;
+
+$break-small: '375px';
+
 @include react-md-everything;
+@include react-md-drawers-media;
 
 html {
   padding: 0;
@@ -31,6 +38,9 @@ html {
     .logo {
       font-family: 'Rakkas';
       font-size: 3em;
+      @media screen and (max-width: $break-small) {
+        font-size: 1em;
+      }      
       font-weight: 'bold';
       vertical-align: 'middle';
     }
@@ -40,6 +50,9 @@ html {
     font-family: 'Orbitron';
     font-weight: 900;
     font-size: 3em;
+    @media screen and (max-width: $break-small) {
+      font-size: 2em;
+    }
     color: $md-primary-color;
     z-index: 5;
     text-shadow: 1px 1px $md-primary-color-dark;
@@ -50,6 +63,13 @@ html {
         background-color: $md-secondary-color-light;
         display: inline-block;
         vertical-align: middle;
+    }
+    img.subject, img.button {
+      height: 120px;
+      width: auto;
+      @media screen and (max-width: $break-small) {
+        height: 60px;
+      }
     }
   }
 }
