@@ -7,7 +7,13 @@ import ScoreboardDisplay from './components/scoreboardDisplay'
 import locationQuery from './queries/location.gql'
 import { graphql } from 'react-apollo';
 
-@graphql(locationQuery)
+@graphql(locationQuery, {
+    options: (props) => ({
+        variables: {
+            locationName: 'Charlotte',
+        },
+    }),
+})
 class ScoreboardModule extends React.Component {
     static propTypes = {
         data: PropTypes.shape({
@@ -21,9 +27,8 @@ class ScoreboardModule extends React.Component {
     }
     render() {
         const { data } = this.props;
-        return (<div style={{textAlign: 'center'}}>
+        return (
             <ScoreboardDisplay loading={data.loading} location={data.Location} />
-        </div>
         )
     }
 }

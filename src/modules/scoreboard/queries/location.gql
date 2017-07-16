@@ -1,6 +1,6 @@
 # GraphQL queries
-query getLocation {
-  Location(name: "Charlotte") {
+query getLocation($locationName: String!) {
+  Location(name: $locationName) {
     id,
     name,
     subjects(orderBy: sequence_ASC) {

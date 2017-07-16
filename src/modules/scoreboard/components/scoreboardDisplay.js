@@ -12,9 +12,17 @@ let FrownCrown = require('../../../../static/img/Frown Crown Transparent.svg');
 const subjects = (props) => {
     return (
         props.map((subject) =>
-            <Meter key={subject.id} image={subject.image} score={subject.score} slider={subject.slider}/>
+            <Meter key={subject.id} image={subject.image} score={subject.score} slider={subject.slider} />
         )
     )
+}
+const factors = (props) => {
+    return (
+
+        props.map((factor) =>
+            <div>{factor.image}</div>
+        )
+    )    
 }
 
 const ScoreboardDisplay = (props) => {
@@ -24,8 +32,6 @@ const ScoreboardDisplay = (props) => {
     }
 
     let style = {
-        width: 760,
-        height: 640,
         backgroundImage: `url('${FrownCrown}')`,
         backgroundSize: `contain`,
         backgroundRepeat: `no-repeat`,
@@ -36,21 +42,31 @@ const ScoreboardDisplay = (props) => {
     }
 
     return (
+        <article className="scoreboard">
+            <header className="md-grid"><h2 className="md-cell md-cell--12">{props.location.name} Sports Despair Index: 7/10/2017</h2></header>
+            <div className="md-grid">
+                <div className="md-cell md-cell--2 md-cell--tablet-hidden md-cell--phone-hidden">
+                </div>
+                <div className="md-cell md-cell--8">
+                    <Paper
+                        style={style}
+                        key="1"
+                        zDepth={1}
+                        raiseOnHover={false}
+                        className="paper-example">
+                        <section>
+                            {subjects(props.location.subjects)}
+                        </section>
+                        <section>
 
-        <div><h2>{props.location.name} Sports Despair Index: 7/10/2017</h2>
-            <Paper
-                style={style}
-                key="1"
-                zDepth={1}
-                raiseOnHover={false}
-                className="paper-example">
-                <table className='display'>
-                    <tbody>
-                    {subjects(props.location.subjects)}
-                    </tbody>
-                </table>
-            </Paper>
-        </div>
+                        </section>
+                    </Paper>
+
+                </div>
+                <div className="md-cell md-cell--2 md-cell--tablet-hidden md-cell--phone-hidden">
+                </div>
+            </div>
+        </article>
     );
 };
 

@@ -31,11 +31,18 @@ const App = () => (
   <div>
     <Helmet
       title="The Sports Despair"
-      meta={[{
-        name: 'description',
-        content: 'The Sports Despair Index, charting the misery brought about by your citys sports teams',
-
-      }, { name: "viewport", content: "width=device-width, initial-scale=1", }]} />
+      meta={[
+        { name: 'description', content: 'The Sports Despair Index, charting the misery brought about by your citys sports teams'}, 
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "link", rel: "apple-touch-icon", sizes:"180x180", href: "/apple-touch-icon.png" },
+        { name: "link", rel: "icon", sizes:"32x32", href: "/favicon-32x32.png" },
+        { name: "link", rel: "icon", sizes:"16x16", href: "/favicon-16x16.png" },
+        { name: "link", rel: "manifest", href: "/manifest.json" },
+        { name: "link", rel: "mask-icon", href: "/safari-pinned-tab.svg" },
+        { name: "link", rel: "shortcut icon", href: "/favicon.ico" },
+        { name: "msapplication-config", content: "/browserconfig.xml" },
+      ]} 
+    />
     <Toolbar
       colored
       actions={actions}
@@ -43,9 +50,9 @@ const App = () => (
       className='header'
     >
       <div className='logo' style={{ display: 'inline-block', textAlign: 'center', position: 'absolute', lineHeight: '70px', left: '50%', transform: 'translate3d(-50%, 0, 0)' }}>
-        <span>Sports</span>
+        &nbsp; Sports
         <img src={logo} style={{ height: 60, verticalAlign: 'top', paddingLeft: 10, paddingRight: 10 }} />
-        <span>Despair</span>
+        Despair
       </div>
     </Toolbar >
     <main className="md-toolbar-relative" style={{ paddingTop: 50, textAlign: 'center' }}>

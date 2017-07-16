@@ -10,7 +10,9 @@ you can import locally, and they wind up in the resulting bundle */
 @import '~react-md/src/scss/react-md';
 
 $md-primary-color: $md-cyan-700;
+$md-primary-color-dark: $md-cyan-900;
 $md-secondary-color: $md-light-blue-a-700;
+$md-secondary-color-light: lighten($md-light-blue-a-700, 25%);
 
 @include react-md-everything;
 
@@ -18,7 +20,7 @@ html {
   padding: 0;
   border: 0;
   font-family: 'Roboto', serif;
-  font-size: 16px;
+  font-size: 1em;
 
   /* We can nest rules, thanks to cssnext */
   li {
@@ -28,44 +30,26 @@ html {
   .header {
     .logo {
       font-family: 'Rakkas';
-      font-size: 36pt;
+      font-size: 3em;
       font-weight: 'bold';
       vertical-align: 'middle';
     }
   }
-  table.display {
-    padding: 100px 5px 5px 5px;
-    width: 100%;
-    tr.meter {
-      td.image {
-        width: 15%;
+  div.score {
+    text-align: left;
+    font-family: 'Orbitron';
+    font-weight: 900;
+    font-size: 3em;
+    color: $md-primary-color;
+    z-index: 5;
+    text-shadow: 1px 1px $md-primary-color-dark;
+  }
+  article.scoreboard {
+    span.slider {
+        line-height: 50%;
+        background-color: $md-secondary-color-light;
+        display: inline-block;
         vertical-align: middle;
-        text-align: right;
-      }
-      td.slider {
-        align-content: left;
-        text-align: left;
-        position: relative;
-        width: 70%
-      }
-      td.slider:after{
-          content: "";
-          display: block;
-          width: 100%;
-          height: 5px;
-          background-color: $md-light-blue-a-100;
-          position: absolute;
-          top: 50%;
-          z-index: -1;
-      }
-      td.score {
-        text-align: left;
-        width: 15%;
-        font-family: 'Orbitron';
-        font-size: 38pt;
-        font-weight: bold;
-        color: $md-primary-color;
-      }
     }
   }
 }
