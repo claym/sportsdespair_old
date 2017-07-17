@@ -53,7 +53,8 @@ export function getBrowserHost() {
 
 // Get the port, based on the current environment
 export function getPort() {
-  const port = process.env[`${getStub()}_PORT`];
+  //const port = process.env[`${getStub()}_PORT`];
+  const port = process.env.PORT;
   if (port) return port;
 
   // No clue from the environment -- work it out ourselves
