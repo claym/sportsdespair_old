@@ -4,7 +4,7 @@ you can import locally, and they wind up in the resulting bundle */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import url('https://fonts.googleapis.com/css?family=Rakkas');
-@import url('https://fonts.googleapis.com/css?family=Orbitron');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:700');
 
 @import '~normalize.css';
 @import '~react-md/src/scss/react-md';
@@ -45,31 +45,58 @@ html {
       vertical-align: 'middle';
     }
   }
-  div.score {
-    text-align: left;
-    font-family: 'Orbitron';
-    font-weight: 900;
-    font-size: 3em;
-    @media screen and (max-width: $break-small) {
-      font-size: 2em;
-    }
-    color: $md-primary-color;
-    z-index: 5;
-    text-shadow: 1px 1px $md-primary-color-dark;
-  }
   article.scoreboard {
+    .paper {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 10%
+    }
+    div.score {
+      text-align: center;
+      font-family: 'Orbitron';
+      font-weight: 700;
+      font-size: 3em;
+      @media screen and (max-width: $break-small) {
+        font-size: 2em;
+      }
+      color: $md-primary-color;
+      z-index: 5;
+      text-shadow: 1px 1px $md-primary-color-dark;
+    }
+    div.image {
+      text-align: center;
+    }    
     span.slider {
-        line-height: 50%;
+        line-height: 40%;
         background-color: $md-secondary-color-light;
         display: inline-block;
         vertical-align: middle;
     }
+    span.sliderafter {
+        line-height: 20%;
+        background-color: $md-secondary-color-light;
+        display: inline-block;
+        vertical-align: middle;
+    }      
     img.subject, img.button {
+      vertical-align: middle;
       height: 120px;
       width: auto;
       @media screen and (max-width: $break-small) {
         height: 60px;
       }
+    }
+    img.button {
+      height: 100px;
+      @media screen and (max-width: $break-small) {
+        height: 50px;
+      }      
+    }
+    img.button {
+        position: absolute;
+        transform: translate(-50%,-40%);
+        vertical-align: middle;      
     }
   }
 }

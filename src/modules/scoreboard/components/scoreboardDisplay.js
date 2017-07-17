@@ -5,6 +5,7 @@ import Paper from 'react-md/lib/Papers';
 import Card from 'react-md/lib/Cards';
 import CardTitle from 'react-md/lib/Cards/CardTitle';
 import CardText from 'react-md/lib/Cards/CardText';
+import Divider from 'react-md/lib/Dividers';
 import PropTypes from 'prop-types';
 import Meter from './meter';
 let FrownCrown = require('../../../../static/img/Frown Crown Transparent.svg');
@@ -33,12 +34,7 @@ const ScoreboardDisplay = (props) => {
 
     let style = {
         backgroundImage: `url('${FrownCrown}')`,
-        backgroundSize: `contain`,
-        backgroundRepeat: `no-repeat`,
-        backgroundPosition: `center`,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        zIndex: -5
+
     }
 
     return (
@@ -52,12 +48,13 @@ const ScoreboardDisplay = (props) => {
                         key="1"
                         zDepth={1}
                         raiseOnHover={false}
-                        className="paper-example">
+                        className="paper">
                         <section>
                             {subjects(props.location.subjects)}
                         </section>
+                        <Divider inset />
                         <section>
-
+test test test
                         </section>
                     </Paper>
 

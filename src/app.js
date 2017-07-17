@@ -1,3 +1,4 @@
+/*eslint no-unused-vars: "error"*/
 import React from 'react';
 import {
   Link,
@@ -51,7 +52,7 @@ const App = () => (
     >
       <div className='logo' style={{ display: 'inline-block', textAlign: 'center', position: 'absolute', lineHeight: '70px', left: '50%', transform: 'translate3d(-50%, 0, 0)' }}>
         &nbsp; Sports
-        <img src={logo} style={{ height: 60, verticalAlign: 'top', paddingLeft: 10, paddingRight: 10 }} />
+        <img src={logo} style={{ height: 56, verticalAlign: 'middle', paddingLeft: 10, paddingRight: 10 }} />
         Despair
       </div>
     </Toolbar >
