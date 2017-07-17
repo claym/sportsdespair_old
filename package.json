@@ -13,6 +13,7 @@
     "build-static-run": "npm run build-static && npm run static",
     "clean": "rimraf dist",
     "lint": "eslint .",
+    "postinstall": "npm run build",
     "server": "node dist/server",
     "server-dev": "cross-env NODE_ENV=development WEBPACK_CONFIG=server_dev webpack --colors",
     "start": "run-p browser server-dev",
