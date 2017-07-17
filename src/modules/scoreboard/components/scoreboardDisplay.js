@@ -54,7 +54,9 @@ const ScoreboardDisplay = (props) => {
                         </section>
                         <Divider inset />
                         <section>
-test test test
+                            <div className="md-grid">
+                                
+                            </div>
                         </section>
                     </Paper>
 

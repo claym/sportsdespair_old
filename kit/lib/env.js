@@ -8,11 +8,11 @@ const defaultHost = 'localhost';
 // types (browser, server, static) are catered for
 const defaultPorts = {
   production: {
-    server: 8080,
+    server: 4000,
   },
   development: {
-    browser: 3000,
-    server: 3001,
+    browser: 8080,
+    server: 8081,
   },
 };
 
@@ -53,8 +53,12 @@ export function getBrowserHost() {
 
 // Get the port, based on the current environment
 export function getPort() {
-  //const port = process.env[`${getStub()}_PORT`];
-  const port = process.env.PORT;
+  var port = process.env[`${getStub()}_PORT`];
+  
+  if (port) return port;
+  
+  port = process.env.PORT;
+
   if (port) return port;
 
   // No clue from the environment -- work it out ourselves

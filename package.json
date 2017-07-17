@@ -99,7 +99,7 @@
     "clean": "rimraf dist",
     "lint": "eslint .",
     "postinstall": "npm run build",
-    "server": "node dist/server",
+    "server": "cross-env SERVER_PROD_HOST=0.0.0.0 node dist/server",
     "server-dev": "cross-env NODE_ENV=development WEBPACK_CONFIG=server_dev webpack --colors",
     "start": "run-p browser server-dev",
     "static": "serve -s dist/public",

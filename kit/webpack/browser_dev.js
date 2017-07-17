@@ -62,6 +62,8 @@ export default new WebpackConfig().extend({
   // Dev server configuration
   devServer: {
 
+    disableHostCheck: true,
+
     // bind our dev server to the correct host and port
     host: HOST,
     port: PORT,
