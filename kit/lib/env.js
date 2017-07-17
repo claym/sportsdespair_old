@@ -8,11 +8,11 @@ const defaultHost = 'localhost';
 // types (browser, server, static) are catered for
 const defaultPorts = {
   production: {
-    server: 4000,
+    server: 8080,
   },
   development: {
-    browser: 8080,
-    server: 8081,
+    browser: 3000,
+    server: 3001,
   },
 };
 
