@@ -84,7 +84,7 @@
     "koa-router": "^7.2.1",
     "koa-send": "^4.1.0",
     "microseconds": "^0.1.0",
-    "npm-run-all": "^4.0.2",    
+    "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-apollo": "^1.4.3",
@@ -99,7 +99,7 @@
     "redux-thunk": "^2.2.0",
     "regenerator-runtime": "^0.10.5",
     "seamless-immutable": "^7.1.2",
-    "webpack": "^3.1.0",  
+    "webpack": "^3.1.0"
   },
   "engines": {
     "node": ">=7",
