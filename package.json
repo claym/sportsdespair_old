@@ -35,7 +35,6 @@
     "brotli-webpack-plugin": "^0.3.0",
     "chunk-manifest-webpack-plugin": "^1.1.0",
     "copy-webpack-plugin": "^4.0.1",
-    "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",
     "eslint": "^3.19.0",
@@ -79,6 +78,7 @@
   "dependencies": {
     "boxen": "^1.1.0",
     "chalk": "^2.0.1",
+    "cross-env": "^5.0.1",
     "ip": "^1.1.5",
     "isomorphic-fetch": "^2.2.1",
     "koa": "^2.3.0",
