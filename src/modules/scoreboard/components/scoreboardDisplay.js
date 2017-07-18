@@ -18,12 +18,35 @@ const subjects = (props) => {
     )
 }
 const factors = (props) => {
+    const span = 12 / props.length;
+    const className = "md-cell md-cell--" + span;
+    console.log("className " + className);
     return (
-
-        props.map((factor) =>
-            <div>{factor.image}</div>
+        props.map((subject) =>
+            <div className={className} style={{ textAlign: 'left' }}>
+                <h3>{subject.name}</h3>
+                <Divider/>
+                {factorList(subject)}
+            </div>
         )
-    )    
+    )
+}
+
+const factorList = (props) => {
+    console.log(props)
+    return (
+        <ul>
+            {
+                props.factors.map((f) => factor(f))
+            }
+        </ul>
+    )
+}
+
+const factor = (props) => {
+    return (
+        <li style={{fontSize: '.9em'}}>{props.description} ({props.score > 0 ? '+' + props.score : props.score})</li>
+    )
 }
 
 const ScoreboardDisplay = (props) => {
@@ -52,10 +75,10 @@ const ScoreboardDisplay = (props) => {
                         <section>
                             {subjects(props.location.subjects)}
                         </section>
-                        <Divider inset />
+                        <Divider/>
                         <section>
                             <div className="md-grid">
-                                
+                                {factors(props.location.subjects)}
                             </div>
                         </section>
                     </Paper>
