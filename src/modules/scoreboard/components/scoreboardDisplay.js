@@ -1,6 +1,7 @@
 /*eslint-disable no-unused-vars*/
 // React
 import React from 'react';
+import Helmet from 'react-helmet';
 import Paper from 'react-md/lib/Papers';
 import Card from 'react-md/lib/Cards';
 import CardTitle from 'react-md/lib/Cards/CardTitle';
@@ -23,8 +24,8 @@ const factors = (props) => {
     return (
         props.map((subject) =>
             <div className={className} style={{ textAlign: 'left' }} key={subject.id}>
-                <h3>{subject.name}</h3>
-                <Divider/>
+                <h3>{subject.name} ({subject.weight}%)</h3>
+                <Divider />
                 {factorList(subject)}
             </div>
         )
@@ -43,13 +44,13 @@ const factorList = (props) => {
 
 const factor = (props) => {
     return (
-        <li style={{fontSize: '.9em'}} key={props.id}>{props.description} ({props.score > 0 ? '+' + props.score : props.score})</li>
+        <li style={{ fontSize: '.9em' }} key={props.id}>{props.description} ({props.score > 0 ? '+' + props.score : props.score})</li>
     )
 }
 
 const score = (props) => {
     let score = 0;
-    props.forEach(function(subject) {
+    props.forEach(function (subject) {
         score += (subject.score * (subject.weight / 10));
     }, this);
     return <span className="totalScore">{(score / 10).toFixed(1)}</span>
@@ -68,6 +69,9 @@ const ScoreboardDisplay = (props) => {
 
     return (
         <article className="scoreboard">
+            <Helmet
+                title={props.location.name + ' Sports Despair Index'}
+            />
             <header className="md-grid"><h2 className="md-cell md-cell--12">{props.location.name} Sports Despair Index: 07/17/2017</h2></header>
             <div className="md-grid">
                 <div className="md-cell md-cell--3 md-cell--1-tablet md-cell--phone-hidden"></div>
@@ -80,13 +84,13 @@ const ScoreboardDisplay = (props) => {
                         className="paper">
                         <section>
                             <div className="md-grid">
-                                <div className="md-cell md-cell--12 md-cell--6-tablet md-cell--4-phone">
+                                <div className="md-cell md-cell--12 md-cell--8-tablet md-cell--4-phone">
                                     {score(props.location.subjects)}
                                 </div>
                             </div>
                             {subjects(props.location.subjects)}
                         </section>
-                        <Divider/>
+                        <Divider />
                         <section>
                             <div className="md-grid">
                                 {factors(props.location.subjects)}
