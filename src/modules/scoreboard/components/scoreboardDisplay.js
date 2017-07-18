@@ -47,6 +47,14 @@ const factor = (props) => {
     )
 }
 
+const score = (props) => {
+    let score = 0;
+    props.forEach(function(subject) {
+        score += (subject.score * (subject.weight / 10));
+    }, this);
+    return <span className="totalScore">{(score / 10).toFixed(1)}</span>
+}
+
 const ScoreboardDisplay = (props) => {
 
     if (props.loading) {
@@ -71,6 +79,11 @@ const ScoreboardDisplay = (props) => {
                         raiseOnHover={false}
                         className="paper">
                         <section>
+                            <div className="md-grid">
+                                <div className="md-cell md-cell--12 md-cell--6-tablet md-cell--4-phone">
+                                    {score(props.location.subjects)}
+                                </div>
+                            </div>
                             {subjects(props.location.subjects)}
                         </section>
                         <Divider/>

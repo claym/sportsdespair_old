@@ -9,6 +9,7 @@ query getLocation($locationName: String!) {
       name,
       score,
       image,
+      weight,
       slider
       factors(orderBy: createdAt_ASC) {
         id,
