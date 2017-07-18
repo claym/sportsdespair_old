@@ -20,10 +20,9 @@ const subjects = (props) => {
 const factors = (props) => {
     const span = 12 / props.length;
     const className = "md-cell md-cell--" + span;
-    console.log("className " + className);
     return (
         props.map((subject) =>
-            <div className={className} style={{ textAlign: 'left' }}>
+            <div className={className} style={{ textAlign: 'left' }} key={subject.id}>
                 <h3>{subject.name}</h3>
                 <Divider/>
                 {factorList(subject)}
@@ -33,7 +32,6 @@ const factors = (props) => {
 }
 
 const factorList = (props) => {
-    console.log(props)
     return (
         <ul>
             {
@@ -45,7 +43,7 @@ const factorList = (props) => {
 
 const factor = (props) => {
     return (
-        <li style={{fontSize: '.9em'}}>{props.description} ({props.score > 0 ? '+' + props.score : props.score})</li>
+        <li style={{fontSize: '.9em'}} key={props.id}>{props.description} ({props.score > 0 ? '+' + props.score : props.score})</li>
     )
 }
 
@@ -62,7 +60,7 @@ const ScoreboardDisplay = (props) => {
 
     return (
         <article className="scoreboard">
-            <header className="md-grid"><h2 className="md-cell md-cell--12">{props.location.name} Sports Despair Index: 7/10/2017</h2></header>
+            <header className="md-grid"><h2 className="md-cell md-cell--12">{props.location.name} Sports Despair Index: 07/17/2017</h2></header>
             <div className="md-grid">
                 <div className="md-cell md-cell--3 md-cell--1-tablet md-cell--phone-hidden"></div>
                 <div className="md-cell md-cell--6 md-cell--6-tablet md-cell--4-tablet">

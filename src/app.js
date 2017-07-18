@@ -10,6 +10,8 @@ import Toolbar from 'react-md/lib/Toolbars';
 import Button from 'react-md/lib/Buttons';
 import SelectField from 'react-md/lib/SelectFields';
 
+import { Follow, Share } from 'react-twitter-widgets'
+
 import ScoreboardModule from './modules/scoreboard';
 import AdminModule from './modules/admin';
 
@@ -56,6 +58,7 @@ const App = () => (
       </div>
     </Toolbar >
     <main className="md-toolbar-relative" style={{ paddingTop: 50, textAlign: 'center' }}>
+      <Follow username="SportsDespair" /><Share url="https://www.sportsdespair.com" />
       <Switch>
         <Route exact path='/' component={ScoreboardModule} />
         <Route path='/admin' component={AdminModule} />

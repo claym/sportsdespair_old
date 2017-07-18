@@ -3,6 +3,7 @@ query getLocation($locationName: String!) {
   Location(name: $locationName) {
     id,
     name,
+    lastUpdated,
     subjects(orderBy: sequence_ASC) {
       id,
       name,
