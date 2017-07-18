@@ -46,13 +46,12 @@ const App = () => (
     />
     <Toolbar
       colored
-      actions={actions}
       fixed={true}
       className='header'
     >
       <div className='logo' style={{ display: 'inline-block', textAlign: 'center', position: 'absolute', lineHeight: '70px', left: '50%', transform: 'translate3d(-50%, 0, 0)' }}>
         &nbsp; Sports
-        <img src={logo} style={{ height: 56, verticalAlign: 'middle', paddingLeft: 10, paddingRight: 10 }} />
+        <img src={logo} style={{ height: 56, verticalAlign: 'top', paddingTop: 5, paddingLeft: 10, paddingRight: 10 }} />
         Despair
       </div>
     </Toolbar >
