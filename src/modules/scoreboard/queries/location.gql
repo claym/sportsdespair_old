@@ -11,7 +11,7 @@ query getLocation($locationName: String!) {
       image,
       weight,
       slider
-      factors(orderBy: createdAt_ASC) {
+      factors(orderBy: createdAt_DESC) {
         id,
         description,
         score
