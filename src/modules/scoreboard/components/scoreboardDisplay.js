@@ -9,6 +9,8 @@ import CardText from 'react-md/lib/Cards/CardText';
 import Divider from 'react-md/lib/Dividers';
 import PropTypes from 'prop-types';
 import Meter from './meter';
+
+let dateFormat = require('dateformat');
 let FrownCrown = require('../../../../static/img/Frown Crown Transparent.svg');
 
 const subjects = (props) => {
@@ -56,8 +58,15 @@ const score = (props) => {
     return <span className="totalScore">{(score / 10).toFixed(1)}</span>
 }
 
-const ScoreboardDisplay = (props) => {
+function getMonday(d) {
+  d = new Date(d);
+  var day = d.getDay(),
+      diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
+  return new Date(d.setDate(diff));
+}
 
+const ScoreboardDisplay = (props) => {
+    
     if (props.loading) {
         return (<div>Loading...</div>);
     }
@@ -72,7 +81,11 @@ const ScoreboardDisplay = (props) => {
             <Helmet
                 title={props.location.name + ' Sports Despair Index'}
             />
-            <header className="md-grid"><h2 className="md-cell md-cell--12">{props.location.name} Sports Despair Index: 07/17/2017</h2></header>
+            <header className="md-grid">
+                <div className="md-cell md-cell--12 md-cell--8-tablet md-cell--4-phone">
+                    {props.location.name} Sports Despair Index - Week of {dateFormat(getMonday(new Date()), "mm/dd/yyyy")}
+                </div>
+            </header>
             <div className="md-grid">
                 <div className="md-cell md-cell--3 md-cell--1-tablet md-cell--phone-hidden"></div>
                 <div className="md-cell md-cell--6 md-cell--6-tablet md-cell--4-tablet">

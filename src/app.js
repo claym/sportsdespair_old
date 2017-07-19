@@ -53,7 +53,7 @@ const App = () => (
     >
       <div className='logo' style={{ display: 'inline-block', textAlign: 'center', position: 'absolute', lineHeight: '70px', left: '50%', transform: 'translate3d(-50%, 0, 0)' }}>
         &nbsp; Sports
-        <img src={logo} style={{ height: 56, verticalAlign: 'top', paddingTop: 5, paddingLeft: 10, paddingRight: 10 }} />
+        <img className="logoImg" src={logo} />
         Despair
       </div>
     </Toolbar >

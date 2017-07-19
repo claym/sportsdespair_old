@@ -35,14 +35,30 @@ html {
   }
 
   .header {
-    .logo {
+    div.logo {
       font-family: 'Rakkas';
       font-size: 3em;
       @media screen and (max-width: $break-small) {
-        font-size: 1em;
+        font-size: 1.2em;
       }      
       font-weight: 'bold';
       vertical-align: 'middle';
+    }
+    img.logoImg {
+      width: auto;
+      height: 56px;
+      padding-top: 5px;
+      padding-left: 10px; 
+      padding-right: 10px;
+      @media screen and (max-width: $break-small) {
+        height: 30px;
+        padding-top: 2px;
+        padding-left: 4px; 
+        padding-right: 4px;
+
+      }
+      
+      verticalAlign: 'top', 
     }
   }
   article.scoreboard {
