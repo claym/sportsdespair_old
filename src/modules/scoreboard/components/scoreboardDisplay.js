@@ -83,7 +83,7 @@ const ScoreboardDisplay = (props) => {
             />
             <header className="md-grid">
                 <div className="md-cell md-cell--12 md-cell--8-tablet md-cell--4-phone">
-                    {props.location.name} Sports Despair Index - Week of {dateFormat(getMonday(new Date()), "mm/dd/yyyy")}
+                    {props.location.name} Sports Despair Index: Week of {dateFormat(getMonday(new Date()), "mm/dd/yyyy")}
                 </div>
             </header>
             <div className="md-grid">
