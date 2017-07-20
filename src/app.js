@@ -35,7 +35,7 @@ const App = () => (
     <Helmet
       title="The Sports Despair"
       meta={[
-        { name: 'description', content: 'The Sports Despair Index, charting the misery brought about by your citys sports teams' },
+        { name: 'description', content: 'The Sports Despair Index, charting the misery brought about by your city\'s sports teams' },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { name: "link", rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { name: "link", rel: "icon", sizes: "32x32", href: "/favicon-32x32.png" },
