@@ -1,5 +1,5 @@
 # GraphQL queries
-query getLocation($locationName: String!) {
+query getLocation($locationName: String!, $startDate:DateTime!, $endDate:DateTime!, $endNull:DateTime) {
   Location(name: $locationName) {
     id,
     name,
@@ -11,10 +11,21 @@ query getLocation($locationName: String!) {
       image,
       weight,
       slider
-      factors(orderBy: createdAt_DESC) {
+      factors(orderBy: createdAt_DESC, filter:{
+    AND: [{
+      startOn_lte:$startDate,
+      OR:[{
+        endOn: $endNull
+      },{
+        endOn_lte: $endDate
+      }]
+    }]
+      }) {
         id,
         description,
-        score
+        score,
+        startOn,
+        endOn
       }
     }
   }

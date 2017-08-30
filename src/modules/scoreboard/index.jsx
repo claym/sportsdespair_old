@@ -11,6 +11,9 @@ import { graphql } from 'react-apollo';
     options: (props) => ({
         variables: {
             locationName: 'Charlotte',
+            endDate: new Date(),
+            startDate: new Date(),
+            endNull: null
         },
     }),
 })
