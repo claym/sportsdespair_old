@@ -17,7 +17,7 @@ query getLocation($locationName: String!, $startDate:DateTime!, $endDate:DateTim
       OR:[{
         endOn: $endNull
       },{
-        endOn_lte: $endDate
+        endOn_gte: $endDate
       }]
     }]
       }) {
