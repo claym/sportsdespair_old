@@ -44,6 +44,7 @@ const App = () => (
         { name: "link", rel: "mask-icon", href: "/safari-pinned-tab.svg" },
         { name: "link", rel: "shortcut icon", href: "/favicon.ico" },
         { name: "msapplication-config", content: "/browserconfig.xml" },
+        { name: "google-site-verification", content: "Yhgd2rV5JGe52krL2rcOyekBMDOwoRxOGHsMf3YZG0o" },
       ]}
     />
     <Toolbar
